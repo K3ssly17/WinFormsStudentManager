@@ -17,10 +17,4 @@ A simple **C# WinForms application** to manage students using **SQL Server**.
 4. Open the solution and **run the app**.
 5. The DataGridView will display students from the database, and you can add new ones.
 
-## Notes
 
-- The connection string is **hardcoded** in `StudentRepository.cs`:
-
-```csharp
-private readonly string cs = 
-"Server=DESKTOP-7RRRC97;Database=WindowsFormsDB;Trusted_Connection=True;TrustServerCertificate=True;";
