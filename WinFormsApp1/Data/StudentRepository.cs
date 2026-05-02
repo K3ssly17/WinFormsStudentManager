@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.Models;
+using System.Configuration;
 
 namespace WinFormsApp1.Data
 {
     public class StudentRepository
     {
-        
         private readonly string cs =
-            "Server=DESKTOP-7RRRC97;Database=WindowsFormsDB;Trusted_Connection=True;TrustServerCertificate=True;";
+            ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 
         public List<Student> GetAll()
         {
@@ -20,6 +20,7 @@ namespace WinFormsApp1.Data
 
             con.Open();
             using SqlDataReader r = cmd.ExecuteReader();
+
             while (r.Read())
             {
                 list.Add(new Student
